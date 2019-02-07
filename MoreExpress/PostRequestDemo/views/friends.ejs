@@ -1,0 +1,14 @@
+<h1>Friends list goes here!!</h1>
+
+<% friends.forEach(function(value,index){ %>
+    <li><%= value %></li>
+<% }) %>
+
+
+<!--通过form标签来调用post方法-->
+<form action='/addfriend' method='POST'>
+    <!--这里需要给input一个属性name,这个name是这个方法下判断同一个方法的工具-->
+    <input type='text' name='newfriend' placeholder='name'>
+    <button>add a new friend!</button>
+    
+</form>

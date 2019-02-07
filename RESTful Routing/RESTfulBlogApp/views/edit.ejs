@@ -1,0 +1,26 @@
+<% include partials/header %>
+<div class='ui main text container segment'>
+    <div class='ui huge header'>
+        Edit <%= blog.title%>
+    </div>
+    <!--由于html已经不再支持put和delete方法，我们用method-override来加入put和get，方法就是method写post，然后再地址后加?_method=PUT-->
+    <form class='ui form' action='/blogs/<%= blog._id%>?_method=PUT' method='POST'>
+        <!--这里是直接添加req.body.body下属性而不是先改req.body下属性再加-->
+        <div class='field'>
+            <label>Title</label>
+            <input type='text' name='blog[title]' placeholder='<%= blog.title%>'>
+        </div>
+        <div class='field'>
+            <label>Image</label>
+            <input type='text' name='blog[image]' placeholder='<%= blog.image%>'>
+        </div>
+        <div class='field'>
+            <label>Blog Content</label>
+            <!--其实这里是有漏洞的，用户可以在文本框里写html和js语言，网页会识别并运行他们，比如alert("I hacked you!")-->
+            <!--用npm下载一个叫express-sanitizer的插件就可以-->
+            <textarea name='blog[body]'><%= blog.body%></textarea>
+        </div>
+        <input class='ui green button' type='submit'> 
+    </form>
+</div>
+<% include partials/footer %>

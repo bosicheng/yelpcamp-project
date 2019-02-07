@@ -1,0 +1,10 @@
+i.icon{
+    font-size: 2em;
+}
+/*这里不要加空格！，连在一起写是两个class都有的意思*/
+.container.main{
+    margin-top: 7em;
+}
+#delete{
+    display: inline;
+}

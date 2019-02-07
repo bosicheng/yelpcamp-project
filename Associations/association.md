@@ -1,0 +1,5 @@
+database中不同的collections之间建立关系有两种方式，embedded和reference
+
+embedded是直接把一个有另外一种对象的array放进去
+
+reference是给每一个post加一个id然后把这些id放进user

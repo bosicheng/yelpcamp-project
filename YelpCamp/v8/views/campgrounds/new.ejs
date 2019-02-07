@@ -1,0 +1,27 @@
+<% include ../partials/header %>
+
+<div class='container'>
+    <h1 style="text-align:center">Create a new Campground!</h1>
+    <div style="width:30%;margin:0 auto">
+        <!--当提交表单时，路由中的req.body取得请求信息，并通过res.send方法将响应信息发送给客户端-->
+        <form action='/campgrounds' method='POST'>
+            <div class="form-group">
+                <input class='form-control' type='text' name='name' placeholder='name'>
+            </div>
+            <div class="form-group">
+                <input class='form-control' tytpe='text' name='image' placeholder='image url'>
+            </div>
+            <div class="form-group">
+                <input class='form-control' tytpe='text' name='description' placeholder='description'>
+            </div>
+            <div class="form-group">
+                 <button class="btn btn-lg btn-outline-success btn-block">Submit!</button>
+            </div>
+            <div class="form-group">
+                 <a href='/campgrounds'>Go Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<% include ../partials/footer %>

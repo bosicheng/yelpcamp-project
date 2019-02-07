@@ -1,0 +1,25 @@
+<!--<link rel="stylesheet" type="text/css" href="/app.css">     这句话后续写在了header里-->
+<% include partials/header %>
+
+<h1>This is the posts page</h1>
+
+<% for (var i=0;i<posts.length;i++){ %>
+    <li>
+        <%= posts[i].title %> - <strong><%= posts[i].author %></strong>
+    </li>
+<% } %>
+</br>
+<p>This is the forEach method!</p>
+
+<% posts.forEach(function(val,index){ %>
+    <li>
+        <%= val.title %> - <strong><%= val.author %></strong>
+    </li>
+<% }) %>
+
+<% include partials/footer %>
+
+<!--直接写style标签就能加css-->
+<!--但是直接style不如link stylesheet-->
+<!--这里注意，app.css不需要在同一个文件夹下，在主js设置app.use就可以-->
+

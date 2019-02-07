@@ -1,0 +1,19 @@
+<% include partials/header %>
+<h1>You fell in love with: <%=thingVar.toUpperCase() %></h1>
+
+<h1>This is a random number: <%=Math.random() %></h1>
+
+<!--ejs文件中 <%= %> 里面是在html指令中写js语言使其能够在html中运行-->
+
+<!--逻辑写<% %>-->
+<% if (thingVar.toLowerCase()==='rusty'){%>
+    <h1>Rusty is a very good choice!!</h1>
+<% } %>
+
+<h2>This is an ejs file!!!</h2>
+
+<% include partials/footer %>
+
+<!--   <%= %>    -->
+<!--   <%  %>   -->
+<!--ejs中两种tag区别：第一种带等号是把js写在html中用于显示返回值的，第二种是单纯的逻辑不希望显示任何内容的-->

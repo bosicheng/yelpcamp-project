@@ -1,0 +1,17 @@
+<style>
+    #btn{
+        background:black;
+        color:white;
+    }
+</style>
+
+<h1>This is the results page</h1>
+
+<% data.Search.forEach(function(value,index){ %>
+    <li>
+        <strong><%= value.Title %></strong>-<%=value.Year %>
+    </li>
+<% }) %>
+</br>
+<a href='/'><button id='btn'>Search Again!</button></a>
+

@@ -1,0 +1,36 @@
+<!--bootstrap4秀的一批-->
+
+<!--这里要注意include的格式，开始没有slash并且不用写ejs-->
+<% include partials/header %>
+
+
+<div class='container'>
+        <!--其实header和div一样只是有语义上的区别-->
+    <header class='jumbotron'>
+        <!--这里又加了一个container的原因是尺寸屏幕缩小时里面内容不贴着左侧-->
+        <div class="container">
+            <h1>Welcome To YelpCamp!</h1>
+            <p>View our hand-picked campgrounds from all over the world</p>
+            <p>
+                <a class='btn btn-primary btn-lg' href='/campgrounds/new'>Add a new campground!</a>
+            </p>
+        </div>
+    </header>
+    
+    <div class='row'>
+        <% campgrounds.forEach(function(value,index){ %>
+        <!--最小时候col-不用写，默认就是col-12-->
+        <div class='col-md-4 col-sm-6 d-flex flex-wrap'>
+            <div class='img-thumbnail mb-3'>
+                <!--bootstrap4这里改了，很恶心-->
+                <img class='img-fluid' src="<%= value.image %>">
+                <div class="text-center">
+                    <h4><%= value.name %></h4>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+    </div>
+</div>
+
+<% include partials/footer %>
